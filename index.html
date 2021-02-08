@@ -60,7 +60,7 @@
   	<div class="container bg-warning">
   		<div class="row">
   			<div class="col-xl-12 text-center text-white mx-auto" style="padding: 10px;">
-		  		<h5>Dashboard</h5>
+		  		<h5>Dashboard (<label class="lbl-name"></label>)</h5>
 		  	</div>
 		</div>
 	</div>
@@ -150,6 +150,7 @@
   <script type="text/javascript">
 
     var name = localStorage.getItem("name");
+    $('.lbl-name').val(name);
     
     if(name == "null"){
       window.location.href = "login.html";
