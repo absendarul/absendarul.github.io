@@ -90,7 +90,6 @@
     var database = firebase.database();
 
     var name = localStorage.getItem("name");
-    var rule = localStorage.getItem("rule");
     // console.log(name);
     if(name != "null"){
       window.location.href = "index.html";
@@ -110,6 +109,7 @@
                   // Store
                   localStorage.setItem("name", value.username);
                   localStorage.setItem("rule", value.rule);
+                  localStorage.setItem("kelas", value.kelas);
                   cek = true;
                 }
             }
@@ -121,7 +121,7 @@
               if(localStorage.getItem("rule") == "admin"){
                 window.location.href = "admin.html";
               }else{
-                window.location.href = "index.html";
+                window.location.href = "absen.html";
               }
             }
         }else{
