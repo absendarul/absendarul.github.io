@@ -101,9 +101,9 @@
       	<div class="col-lg-12 bg-light">
           <table class="table table-bordered">
           	<tr>
-          		<td class="align-middle pulsa bg-primary text-white" width="33%" onclick="pilihKategori('pulsa')">kelas <br> 20</td>
-          		<td class="align-middle paketdata" width="33%" onclick="pilihKategori('paketdata')">pengajar <br> 20</td>
-          		<td class="align-middle pln" width="33%" onclick="pilihKategori('pln')">santri <br> 20</td>
+          		<td class="align-middle pulsa bg-primary text-white" width="33%" onclick="pilihKategori('pulsa')">total kelas<br>20</td>
+          		<td class="align-middle paketdata" width="33%" onclick="pilihKategori('paketdata')">total ustadz<br>20</td>
+          		<td class="align-middle pln" width="33%" onclick="pilihKategori('pln')">total santri<br>20</td>
           	</tr>
           </table>
         </div>
@@ -111,23 +111,13 @@
         <input type="hidden" name="kat" id="kat" value="pulsa.html">
 
         <div class="col-lg-12 bg-light">
-          <table class="table table-bordered">
-          	<tr class="operator">
-          		<td class="align-middle" width="33%" onclick="pilihOperator('telkomsel')">Kelas 1 <br>75%</td>
-          		<td class="align-middle" width="33%" onclick="pilihOperator('telkomsel')">Kelas 2 <br>75%</td>
-          		<td class="align-middle" width="33%" onclick="pilihOperator('telkomsel')">Kelas 3 <br>75%</td>
-          	</tr>
-
-          	<tr class="operator">
-          		<td class="align-middle" width="33%" onclick="pilihOperator('telkomsel')">Kelas 4 <br>75%</td>
-              <td class="align-middle" width="33%" onclick="pilihOperator('telkomsel')">Kelas 5 <br>75%</td>
-              <td class="align-middle" width="33%" onclick="pilihOperator('telkomsel')">Kelas 6 <br>75%</td>
-          	</tr>
-
-          	<tr class="listrik" style="display: none;">
-          		<td class="align-middle" width="33%" onclick="pilihOperator('token')"><img src="logo/token.png" width="50" height="55" class="m-auto"> <br> Token Listrik</td>
-          	</tr>
-          </table>
+          <div class="col-lg-4 border bg-light">
+            <div class="features-icons-item mx-auto mb-5 mb-lg-0 mb-lg-3">
+              <h3>Kelas 1</h3>
+              <p class="lead mb-2">Persentase :</p>
+              <p class="lead mb-2"><button class="btn btn-outline-danger btn-block" onclick="listpakedata('telkomsel')">Paket Data</button></p>
+            </div>
+          </div>
         </div>
 
       </div>
