@@ -49,24 +49,23 @@
   </header>
 
   <!-- Icons Grid -->
-  <section class="features-icons bg-light" style="padding: 0px !important;">
+  <section class="features-icons bg-light" style="padding-top: 5px !important;">
     <div class="container">
-      <button class="btn btn-outline-primary btn-block">
-      <div class="list-kelas"></div>      
-
+      <div class="form-group col-md-12">
+          <input id="idd" type="hidden" class="form-control" name="idd">
+          <input id="nama" type="text" class="form-control" name="nama" placeholder="Nama Kelas" required autofocus autocomplete="off">
+      </div>  
+      <div class="form-group col-md-12">
+          <input id="keterangan" type="text" class="form-control" name="keterangan" placeholder="Keterangan" required autofocus autocomplete="off">
+      </div> 
+      <div class="form-group col-md-12">
+          <button type="button" class="btn btn-success simpan" onclick="submitData()">Simpan</button>
+          <button type="button" class="btn btn-success delete" onclick="deleteData()">Delete</button>
+      </div>  
     </div>
   </section>
 
-  
-  <div style="padding-bottom:50px"></div>
-  <footer class="footer fixed-bottom" style="padding: 5px !important;">
-    <nav class="nav nav-pills nav-fill navbar-dark">
-      <a class="nav-item nav-link-footer" href="index.html"><button class="btn btn-dark btn-block" style="font-size: 14px !important"><i class="icon-home m-auto"></i> Home</button></a>
-      <a class="nav-item nav-link-footer" href="kelas.html"><button class="btn btn-warning btn-block" style="font-size: 14px !important"><i class="icon-docs m-auto"></i> Kelas</button></a>
-      <a class="nav-item nav-link-footer" href="ustadz.html"><button class="btn btn-dark btn-block" style="font-size: 14px !important"><i class="icon-user m-auto"></i> Ustadz</button></a>
-      <a class="nav-item nav-link-footer" href="santri.html"><button class="btn btn-dark btn-block" style="font-size: 14px !important"><i class="icon-user m-auto"></i> Santri</button></a>
-    </nav>
-  </footer>
+
 
   <!-- Bootstrap core JavaScript -->
   <script src="vendor/jquery/jquery.min.js"></script>
@@ -91,28 +90,31 @@
 
     var database = firebase.database();
 
-    var lastIndex = 0;
     
-    // Get Data
-    firebase.database().ref('kelas').on('value', function (snapshot) {
-        var value = snapshot.val();
-        var htmls = [];
-        $.each(value, function (index, value) {
-            if (value) {
-                  htmls.push('<div class="row" style="padding: 5px;">'+
-                                   '<button class="btn btn-outline-dark btn-block col-lg-12" style="text-align: left !important; font-size: 12px;"><h6>'+value.nama+'</h6>'
-                                      + value.keterangan
-                                      + "<br><label style='text-align: right'>Edit|Hapus</label>"
-                                      +'</button></div>');
-            }
-            lastIndex = index;
-        });
+    
+   function UUID() { // Public Domain/MIT
+      var d = new Date().getTime();//Timestamp
+      var d2 = (performance && performance.now && (performance.now()*1000)) || 0;//Time in microseconds since page-load or 0 if unsupported
+      return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
+          var r = Math.random() * 16;//random number between 0 and 16
+          if(d > 0){//Use timestamp until depleted
+              r = (d + r)%16 | 0;
+              d = Math.floor(d/16);
+          } else {//Use microseconds since page-load if supported
+              r = (d2 + r)%16 | 0;
+              d2 = Math.floor(d2/16);
+          }
+          return (c === 'x' ? r : (r & 0x3 | 0x8)).toString(16);
+      });
+  }
 
-        $('.list-kelas').html(htmls);
-        
-    });   
+  function submitData(){
+
+  }
+
+  function deleteData(){
     
-   
+  }
   </script>
 
 </body>

@@ -51,7 +51,7 @@
   <!-- Icons Grid -->
   <section class="features-icons bg-light" style="padding-top: 5px !important;">
     <div class="container">
-      <button class="btn btn-outline-primary btn-block" onclick="goToPage('kelas_form.html')"><i class="icon-plus m-auto"></i> Tambah </button>
+      <button class="btn btn-outline-primary btn-block" onclick="goToPage('kelas_form.html?op=add')"><i class="icon-plus m-auto"></i> Tambah </button>
       <div class="list-kelas"></div>      
 
     </div>
@@ -112,7 +112,9 @@
         
     });   
     
-   
+    function goToPage(url){
+      window.location.href = url;
+    }
   </script>
 
 </body>
