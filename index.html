@@ -32,10 +32,17 @@
   <script type="text/javascript">
 
     var name = localStorage.getItem("name");
+    var rule = localStorage.getItem("rule");
     $('.lbl-name').text(name);
 
     if(name == "null"){
       window.location.href = "login.html";
+    }else{
+      if(rule == "admin"){
+        window.location.href = "admin.html";
+      }else{
+        window.location.href = "absen.html";
+      }
     }
 </script>
 
