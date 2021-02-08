@@ -101,9 +101,9 @@
       	<div class="col-lg-12 bg-light">
           <table class="table table-bordered">
           	<tr>
-          		<td class="align-middle pulsa bg-primary text-white" width="33%" onclick="pilihKategori('pulsa')"><i class="icon-screen-smartphone m-auto"></i> <br> kelas <br> 20</td>
-          		<td class="align-middle paketdata" width="33%" onclick="pilihKategori('paketdata')"><i class="icon-feed m-auto"></i> <br> pengajar <br> 20</td>
-          		<td class="align-middle pln" width="33%" onclick="pilihKategori('pln')"><i class="icon-energy m-auto"></i> <br> santri <br> 20</td>
+          		<td class="align-middle pulsa bg-primary text-white" width="33%" onclick="pilihKategori('pulsa')">kelas <br> 20</td>
+          		<td class="align-middle paketdata" width="33%" onclick="pilihKategori('paketdata')">pengajar <br> 20</td>
+          		<td class="align-middle pln" width="33%" onclick="pilihKategori('pln')">santri <br> 20</td>
           	</tr>
           </table>
         </div>
@@ -150,7 +150,7 @@
   <script type="text/javascript">
 
     var name = localStorage.getItem("name");
-    $('.lbl-name').text(name).toUpperCase();
+    $('.lbl-name').text(name.toUpperCase());
     
     if(name == "null"){
       window.location.href = "login.html";
